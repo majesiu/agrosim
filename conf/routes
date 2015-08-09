@@ -1,0 +1,19 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET    /                                        controllers.Application.index
+GET    /index                                   controllers.Application.index2
+GET    /dzialka/:id                             controllers.Application.dzialka(id: Int)
+GET    /dzialka/:id/:rok                        controllers.Application.uprawa(id: Int,rok: String)
+GET    /del/:id                                 controllers.Application.del(id: String)
+GET    /deldzialka/:id/:rok/:typ                controllers.Application.deldzialka(id: String,rok: String,typ :String)
+GET    /deluprawa/:id/:rok/:typ/:koszt          controllers.Application.deluprawa(id: String,rok: String,typ :String, koszt:Double)
+
+POST   /addUprawa                               controllers.Application.addUprawa
+POST   /addZabieg                               controllers.Application.addZabieg
+POST   /addDzialka                              controllers.Application.addDzialka
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
